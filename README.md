@@ -1,119 +1,167 @@
-# Predicción del Gasto Mensual de Clientes – RetailBoost
-## Descripción del proyecto
+# 🛍️ RetailBoost – Predicción del Gasto Mensual de Clientes
 
-Este proyecto aborda un problema de regresión aplicado a analítica de clientes para una empresa ficticia de comercio electrónico llamada *RetailBoost*.
+> Proyecto de Machine Learning para estimar el gasto mensual de clientes de un e-commerce mediante modelos de regresión y apoyar estrategias comerciales basadas en datos.
 
-El *objetivo principal* es predecir el gasto mensual de los clientes (monthly_spent) a partir de variables demográficas y de comportamiento, tales como edad, ingresos, historial de visitas y otros factores relevantes.
+---
 
-El trabajo combina **Análisis Exploratorio de Datos (EDA)** con **modelado predictivo**, priorizando tanto la interpretabilidad de los modelos como su evaluación mediante métricas estadísticas estándar.
+# 📌 Descripción del proyecto
 
-#### Objetivos
+RetailBoost es una empresa ficticia de comercio electrónico que busca comprender qué factores influyen en el gasto mensual de sus clientes.
 
-1. Realizar un análisis exploratorio para comprender la estructura y características del dataset.
+Este proyecto desarrolla un pipeline de análisis y modelado predictivo para estimar el valor de **`monthly_spent`**, combinando análisis exploratorio de datos con modelos de regresión lineal.
 
-2. Analizar la distribución de la variable objetivo (monthly_spent) y de las principales variables predictoras.
+El objetivo no consiste únicamente en obtener buenas predicciones, sino también en interpretar cómo las variables demográficas y de comportamiento impactan sobre el gasto de los clientes.
 
-3. Ajustar y comparar distintos modelos de regresión.
+---
 
-4. Evaluar el rendimiento de los modelos utilizando métricas de error.
+# 🎯 Objetivos
 
-5. Interpretar los resultados para identificar qué variables influyen con mayor peso en el gasto mensual.
+- Comprender la estructura y calidad del conjunto de datos.
+- Explorar las relaciones entre las variables predictoras y el gasto mensual.
+- Implementar modelos de regresión lineal simple y múltiple.
+- Comparar el desempeño de los modelos.
+- Interpretar los resultados para apoyar decisiones comerciales.
 
+---
 
-#### Contexto del negocio
+# 🏗️ Pipeline del proyecto
 
-Comprender el comportamiento de gasto de los clientes es fundamental para empresas de e-commerce, ya que permite:
+```text
+Carga de datos
+       │
+       ▼
+Análisis Exploratorio (EDA)
+       │
+       ▼
+Preprocesamiento
+       │
+       ▼
+Regresión Lineal Simple
+       │
+       ▼
+Regresión Lineal Múltiple
+       │
+       ▼
+Evaluación
+       │
+       ▼
+Insights de negocio
+```
 
-- Mejorar la segmentación de clientes.
+---
 
-- Optimizar estrategias de marketing y fidelización.
+# 📁 Estructura del repositorio
 
-- Identificar clientes de alto valor.
+```text
+retailboost-sales-prediction
+│
+├── data
+│   └── retailboost_customers_regression.csv
+│
+├── notebooks
+│   └── RetailBoost_Regression.ipynb
+│
+├── images
+│
+├── README.md
+└── requirements.txt
+```
 
-- Apoyar la toma de decisiones basada en datos.
+---
 
-Este proyecto simula un escenario real donde el análisis predictivo aporta insights accionables para el negocio.
+# 📊 Contexto de negocio
 
+Comprender el comportamiento de compra permite:
 
-#### *Análisis Exploratorio de Datos (EDA)*
+- identificar clientes de alto valor;
+- optimizar campañas de marketing;
+- personalizar promociones;
+- mejorar estrategias de fidelización;
+- apoyar decisiones comerciales basadas en datos.
 
-El EDA incluye:
+---
 
-- Inspección inicial del dataset (dimensiones, tipos de datos y valores faltantes).
+# 🔍 Análisis Exploratorio de Datos
 
-- Estadísticos descriptivos de las variables numéricas.
+Durante el EDA se realizaron las siguientes tareas:
 
-- Visualización de la distribución de la variable objetivo (monthly_spent).
+- inspección de la estructura del dataset;
+- identificación de valores faltantes;
+- análisis descriptivo de variables numéricas;
+- estudio de la distribución de la variable objetivo;
+- análisis de correlaciones entre variables.
 
-- Análisis de las principales variables predictoras mediante gráficos y correlaciones.
+Esta etapa permitió detectar patrones relevantes antes del modelado.
 
-Esta etapa permite evaluar la *calidad de los datos* y *detectar patrones* relevantes antes del modelado.
+---
 
+# 🤖 Modelado predictivo
 
-#### *Modelado*
+Se implementaron dos enfoques de regresión.
 
-Se implementaron los siguientes modelos de regresión:
+## Regresión Lineal Simple
 
-**Regresión lineal simple**
-Utilizada para *analizar la relación entre una única variable predictora y el gasto mensual*.
+Modelo utilizado para estudiar la relación entre una única variable predictora y el gasto mensual.
 
-**Regresión lineal múltiple**
-Permite evaluar el *efecto conjunto de varias variables explicativas sobre el gasto mensual de los clientes*.
+## Regresión Lineal Múltiple
 
-Para garantizar una evaluación objetiva, el dataset se dividió en conjuntos de entrenamiento y prueba.
+Modelo que incorpora múltiples variables explicativas para mejorar la capacidad predictiva y comprender el efecto conjunto de distintos factores.
 
+---
 
-#### *Métricas de evaluación*
+# 📈 Métricas de evaluación
 
-El desempeño de los modelos se evaluó utilizando:
+Los modelos fueron comparados mediante:
 
-**R² (coeficiente de determinación):** Mide la proporción de la variabilidad del gasto mensual explicada por el modelo.
+- R²
+- MAE
+- RMSE
 
-**MAE (Mean Absolute Error):** Indica el error promedio absoluto de las predicciones.
+Estas métricas permitieron evaluar tanto la capacidad explicativa como el error de predicción.
 
-**RMSE (Root Mean Squared Error):** Penaliza con mayor peso los errores grandes, proporcionando una medida de robustez del modelo.
+---
 
-Estas métricas permiten comparar de forma clara la calidad de los modelos ajustados.
+# 💡 Principales resultados
 
+- La Regresión Lineal Múltiple presentó un mejor desempeño que la Regresión Lineal Simple.
+- Las variables demográficas y de comportamiento mostraron diferente grado de influencia sobre el gasto mensual.
+- El modelo logró un equilibrio adecuado entre interpretabilidad y capacidad predictiva.
 
-#### *Resultados principales*
+---
 
-- El modelo de regresión lineal múltiple presenta un mejor ajuste que el modelo simple, explicando una mayor proporción de la variabilidad del gasto mensual.
+# ⭐ Conclusiones
 
-- Algunas variables demográficas y de comportamiento muestran una influencia más significativa sobre el gasto de los clientes.
+El proyecto demuestra cómo un enfoque de regresión puede utilizarse para estimar el comportamiento económico de los clientes y transformar datos históricos en información útil para la toma de decisiones.
 
-- Los errores de predicción obtenidos son razonables en relación con la escala de la variable objetivo, lo que indica un desempeño adecuado del modelo.
+Asimismo, evidencia la importancia del análisis exploratorio y de la correcta selección de variables para mejorar el desempeño de los modelos predictivos.
 
+---
 
-#### *Conclusiones*
+# 🛠️ Tecnologías utilizadas
 
-- El Análisis Exploratorio de Datos resulta clave para comprender el comportamiento de las variables y orientar el proceso de modelado.
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
 
-- Los modelos de regresión múltiple ofrecen un mejor desempeño predictivo que los modelos simples cuando el comportamiento del cliente depende de múltiples factores.
+---
 
-- Las métricas obtenidas indican un buen equilibrio entre capacidad explicativa y error de predicción, manteniendo la interpretabilidad del modelo.
+# 💼 Competencias demostradas
 
-- La metodología empleada puede ampliarse incorporando técnicas más avanzadas, como regularización o modelos no lineales, para mejorar aún más el rendimiento.
+- Análisis Exploratorio de Datos (EDA)
+- Regresión Lineal
+- Regresión Lineal Múltiple
+- Evaluación de modelos de regresión
+- Interpretación de coeficientes
+- Storytelling con datos
+- Machine Learning aplicado a negocio
 
-En conjunto, este análisis evidencia el valor del enfoque analítico para generar conocimiento útil y apoyar decisiones estratégicas basadas en datos.
+---
 
+## 👩‍💻 Autora
 
-#### *Tecnologías utilizadas*
+**Vanina Cavallin**
 
-Python
-
-Pandas
-
-NumPy
-
-Matplotlib
-
-Seaborn
-
-Scikit-learn
-
-
-### **👩‍💻 Autora**
-
-Dra. Vanina Cavallin
-Junior Data Scientist
+Doctora en Ciencias Biológicas | Jr. Data Scientist
